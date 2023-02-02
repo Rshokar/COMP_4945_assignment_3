@@ -19,3 +19,4 @@ C:\Users\m\source\repos\COMP_4945_assignment_3\assignment\SeleniumTest.Tests\obj
 C:\Users\m\source\repos\COMP_4945_assignment_3\assignment\SeleniumTest.Tests\obj\Debug\SeleniumTest.Tests.csproj.CopyComplete
 C:\Users\m\source\repos\COMP_4945_assignment_3\assignment\SeleniumTest.Tests\obj\Debug\SeleniumTest.Tests.dll
 C:\Users\m\source\repos\COMP_4945_assignment_3\assignment\SeleniumTest.Tests\obj\Debug\SeleniumTest.Tests.pdb
+C:\Users\m\source\repos\COMP_4945_assignment_3\assignment\SeleniumTest.Tests\bin\Debug\WebDriver.Support.dll
