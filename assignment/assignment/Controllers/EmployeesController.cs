@@ -109,6 +109,9 @@ namespace assignment.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+
+            var servicesToDelete = db.Services.Where(s => s.EmployeeID == id);
+            db.Services.RemoveRange(servicesToDelete);
             Employee employee = db.Employees.Find(id);
             db.People.Remove(employee);
             db.SaveChanges();

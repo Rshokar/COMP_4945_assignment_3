@@ -39,7 +39,7 @@ namespace assignment.Controllers
         // GET: Services/Create
         public ActionResult Create()
         {
-            ViewBag.EmployeeID = new SelectList(db.People, "Id", "Name");
+            ViewBag.EmployeeID = new SelectList(db.Employees, "Id", "Name");
             return View();
         }
 

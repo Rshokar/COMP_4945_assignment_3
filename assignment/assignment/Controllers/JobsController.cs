@@ -39,7 +39,7 @@ namespace assignment.Controllers
         // GET: Jobs/Create
         public ActionResult Create()
         {
-            ViewBag.CustomerId = new SelectList(db.Customers, "Id", "Address");
+            ViewBag.CustomerId = new SelectList(db.Customers, "Id", "Name");
             ViewBag.ServiceId = new SelectList(db.Services, "ServiceID", "Name");
             return View();
         }
@@ -58,7 +58,7 @@ namespace assignment.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CustomerId = new SelectList(db.Customers, "Id", "Address", job.CustomerId);
+            ViewBag.CustomerId = new SelectList(db.People, "Id", "Name", job.CustomerId);
             ViewBag.ServiceId = new SelectList(db.Services, "ServiceID", "Name", job.ServiceId);
             return View(job);
         }
@@ -66,7 +66,6 @@ namespace assignment.Controllers
         // GET: Jobs/Edit/5
         public ActionResult Edit(int? id)
         {
-            Console.WriteLine("ID: " + id);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -76,7 +75,7 @@ namespace assignment.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CustomerId = new SelectList(db.Customers, "Id", "Address", job.CustomerId);
+            ViewBag.CustomerId = new SelectList(db.People, "Id", "Name", job.CustomerId);
             ViewBag.ServiceId = new SelectList(db.Services, "ServiceID", "Name", job.ServiceId);
             return View(job);
         }
@@ -94,7 +93,7 @@ namespace assignment.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CustomerId = new SelectList(db.Customers, "Id", "Address", job.CustomerId);
+            ViewBag.CustomerId = new SelectList(db.People, "Id", "Name", job.CustomerId);
             ViewBag.ServiceId = new SelectList(db.Services, "ServiceID", "Name", job.ServiceId);
             return View(job);
         }
