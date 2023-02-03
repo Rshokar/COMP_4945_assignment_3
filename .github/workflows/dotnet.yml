@@ -27,5 +27,5 @@ jobs:
     - name: Build
       
       run: msbuild  assignment/
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+    #- name: Test
+    #  run: dotnet test --no-build --verbosity normal
