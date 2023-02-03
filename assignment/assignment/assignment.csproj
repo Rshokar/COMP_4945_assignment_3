@@ -159,6 +159,14 @@
     <Compile Include="Migrations\202301300816310_1.4.4.designer.cs">
       <DependentUpon>202301300816310_1.4.4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202302021830016_1.4.5.cs" />
+    <Compile Include="Migrations\202302021830016_1.4.5.designer.cs">
+      <DependentUpon>202302021830016_1.4.5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202302021836268_1.4.6.cs" />
+    <Compile Include="Migrations\202302021836268_1.4.6.designer.cs">
+      <DependentUpon>202302021836268_1.4.6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -254,6 +262,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202301300816310_1.4.4.resx">
       <DependentUpon>202301300816310_1.4.4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302021830016_1.4.5.resx">
+      <DependentUpon>202302021830016_1.4.5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302021836268_1.4.6.resx">
+      <DependentUpon>202302021836268_1.4.6.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

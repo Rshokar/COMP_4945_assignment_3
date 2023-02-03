@@ -22,13 +22,14 @@ namespace assignment.Controllers
         }
 
         // GET: Jobs/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int? customerId, int? serviceId)
         {
-            if (id == null)
+            Console.WriteLine(customerId + " " + serviceId);
+            if (customerId == null || serviceId == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Job job = db.Jobs.Find(id);
+            var job = db.Jobs.FirstOrDefault(j => j.CustomerId == customerId && j.ServiceId == serviceId);
             if (job == null)
             {
                 return HttpNotFound();
@@ -39,7 +40,7 @@ namespace assignment.Controllers
         // GET: Jobs/Create
         public ActionResult Create()
         {
-            ViewBag.CustomerId = new SelectList(db.Customers, "Id", "Address");
+            ViewBag.CustomerId = new SelectList(db.Customers, "Id", "Name");
             ViewBag.ServiceId = new SelectList(db.Services, "ServiceID", "Name");
             return View();
         }
@@ -58,25 +59,26 @@ namespace assignment.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CustomerId = new SelectList(db.Customers, "Id", "Address", job.CustomerId);
+            ViewBag.CustomerId = new SelectList(db.People, "Id", "Name", job.CustomerId);
             ViewBag.ServiceId = new SelectList(db.Services, "ServiceID", "Name", job.ServiceId);
             return View(job);
         }
 
         // GET: Jobs/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? customerId, int? serviceId)
         {
-            Console.WriteLine("ID: " + id);
-            if (id == null)
+            Console.WriteLine(customerId + " " + serviceId);
+            if (customerId == null || serviceId == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Job job = db.Jobs.Find(id);
+            var job = db.Jobs.FirstOrDefault(j => j.CustomerId == customerId && j.ServiceId == serviceId);
+
             if (job == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.CustomerId = new SelectList(db.Customers, "Id", "Address", job.CustomerId);
+            ViewBag.CustomerId = new SelectList(db.Customers, "Id", "Name", job.CustomerId);
             ViewBag.ServiceId = new SelectList(db.Services, "ServiceID", "Name", job.ServiceId);
             return View(job);
         }
@@ -94,19 +96,20 @@ namespace assignment.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CustomerId = new SelectList(db.Customers, "Id", "Address", job.CustomerId);
+            ViewBag.CustomerId = new SelectList(db.People, "Id", "Name", job.CustomerId);
             ViewBag.ServiceId = new SelectList(db.Services, "ServiceID", "Name", job.ServiceId);
             return View(job);
         }
 
         // GET: Jobs/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int? customerId, int? serviceId)
         {
-            if (id == null)
+            Console.WriteLine(customerId + " " + serviceId);
+            if (customerId == null || serviceId == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Job job = db.Jobs.Find(id);
+            var job = db.Jobs.FirstOrDefault(j => j.CustomerId == customerId && j.ServiceId == serviceId);
             if (job == null)
             {
                 return HttpNotFound();
@@ -117,9 +120,9 @@ namespace assignment.Controllers
         // POST: Jobs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int? customerId, int? serviceId)
         {
-            Job job = db.Jobs.Find(id);
+            var job = db.Jobs.FirstOrDefault(j => j.CustomerId == customerId && j.ServiceId == serviceId);
             db.Jobs.Remove(job);
             db.SaveChanges();
             return RedirectToAction("Index");

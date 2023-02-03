@@ -109,9 +109,16 @@ namespace assignment.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            // First we want to delete all jobs with that customer.
+            var jobsToDelete = db.Jobs.Where(j => j.CustomerId == id);
+            db.Jobs.RemoveRange(jobsToDelete);
+
             Customer customer = db.Customers.Find(id);
+
+
             db.People.Remove(customer);
-            db.SaveChanges();
+            
+           db.SaveChanges();
             return RedirectToAction("Index");
         }
 
