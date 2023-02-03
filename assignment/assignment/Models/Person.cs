@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
@@ -8,7 +10,9 @@ namespace assignment.Models
 {
     public class Person
     {
+        [DisplayName("Person")]
         public int Id { get; set; }
+
         public string Name { get; set; }
     }
 
@@ -29,8 +33,12 @@ namespace assignment.Models
 
     public class Service
     {
+
+        [DisplayName("Service")]
         public int ServiceID { get; set; }
         public string Name { get; set; }
+
+        [DisplayName("Employee")]
         public int EmployeeID { get; set; }
         public virtual Employee Employee { get; set; }
 
@@ -39,7 +47,10 @@ namespace assignment.Models
 
     public class Job
     {
+        [DisplayName("Customer")]
         public int CustomerId { get; set; }
+
+        [DisplayName("Service")]
         public int ServiceId { get; set; }
         public virtual Service Service { get; set; }
         public virtual Customer Customer { get; set; }
