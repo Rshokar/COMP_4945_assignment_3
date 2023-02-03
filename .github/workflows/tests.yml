@@ -6,6 +6,8 @@ jobs:
     runs-on: windows-2022 
     name: first_test
     steps:
+    # run the project
+    # target selenium
       - uses: actions/checkout@v3
   test_two:
     runs-on: windows-2022
