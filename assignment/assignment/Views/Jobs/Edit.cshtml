@@ -23,7 +23,7 @@
             @Html.DisplayNameFor(model => model.ServiceId)
         </label>
         <div class="col-md-10">
-            @Html.DropDownList("ServiceId", null, htmlAttributes: new { @class = "form-control" })
+            @Html.DropDownList("ServiceId", null, htmlAttributes: new { @class = "form-control ServiceClass" })
             @Html.ValidationMessageFor(model => model.ServiceId, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -33,7 +33,7 @@
             @Html.DisplayNameFor(model => model.CustomerId)
         </label>
         <div class="col-md-10">
-            @Html.DropDownList("CustomerId", null, htmlAttributes: new { @class = "form-control" })
+            @Html.DropDownList("CustomerId", null, htmlAttributes: new { @class = "form-control CustomerClass" })
             @Html.ValidationMessageFor(model => model.CustomerId, "", new { @class = "text-danger" })
         </div>
     </div>
