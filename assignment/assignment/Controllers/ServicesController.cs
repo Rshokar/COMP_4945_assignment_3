@@ -73,7 +73,7 @@ namespace assignment.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.EmployeeID = new SelectList(db.People, "Id", "Name", service.EmployeeID);
+            ViewBag.EmployeeID = new SelectList(db.Employees, "Id", "Name", service.EmployeeID);
             return View(service);
         }
 
