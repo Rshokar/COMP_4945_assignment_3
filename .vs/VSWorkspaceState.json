@@ -1,10 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\.github\\workflows",
     "\\assignment",
     "\\assignment\\assignment",
-    "\\assignment\\assignment\\Controllers"
+    "\\assignment\\assignment\\Views",
+    "\\assignment\\assignment\\Views\\Jobs"
   ],
-  "SelectedNode": "\\assignment\\assignment\\Controllers\\JobsController.cs",
+  "SelectedNode": "\\assignment\\assignment\\Views\\Jobs\\Delete.cshtml",
   "PreviewInSolutionExplorer": false
 }
