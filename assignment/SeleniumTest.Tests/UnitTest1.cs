@@ -192,7 +192,7 @@ namespace SeleniumTest.Tests
             //dropDown.SelectByText("Employee000");
             SelectElement dropDown = new SelectElement(driver.FindElement(By.XPath("//select[@class='form-control EmployeeClass']")));
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            dropDown.SelectByText("E1");
+            dropDown.SelectByText("E5");
 
             driver.FindElement(By.XPath("//Input[@type='submit']")).Click();
 
@@ -208,7 +208,7 @@ namespace SeleniumTest.Tests
             // Select the dropdown option (this user was set in a previous test)
             SelectElement dropDown3 = new SelectElement(driver.FindElement(By.XPath("//select[@class='form-control ServiceClass']")));
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            dropDown3.SelectByText("S4");
+            dropDown3.SelectByText("S3");
             SelectElement dropDown4 = new SelectElement(driver.FindElement(By.XPath("//select[@class='form-control CustomerClass']")));
             dropDown4.SelectByText("C5");
 
