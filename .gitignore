@@ -74,6 +74,11 @@ _[Ss]cripts
 *.ncrunchsolution
 *.dot[Cc]over
 
-assignment/assignment/App_Data/assignment.Models.PersonContext.mdf
-assignment/assignment/App_Data/assignment.Models.PersonContext_log.ldf
-assignment/assignment/App_Data
+/assignment/assignment/App_Data/assignment.Models.PersonContext.mdf
+/assignment/assignment/App_Data/assignment.Models.PersonContext_log.ldf
+/assignment/assignment/App_Data
+
+/.vs
+/assignment/.vs
+/assignment/assignment/bin
+/assignment/assignment/obj
